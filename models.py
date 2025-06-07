@@ -6,7 +6,7 @@ class Contact(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(50), nullable=False)
-    email = Column(String(100), nullable=True, unique=True)
+    email = Column(String(100), nullable=True)
     phone = Column(String(15), nullable=True, unique=True)
     message = Column(Text, nullable=False)
 
