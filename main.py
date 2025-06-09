@@ -58,6 +58,10 @@ class ContactCreate(BaseModel):
     phone: str | None = None
     message: str
 
+@app.get("/")
+def root():
+    return {"message": "I'm alive!"}
+
 @app.post("/contact")
 def create_contact(contact: ContactCreate, db: Session = Depends(get_db)):
     db_contact=models.Contact(**contact.dict())
